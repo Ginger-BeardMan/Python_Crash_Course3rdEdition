@@ -1,23 +1,8 @@
-cities = {
-	'Manchester': {
-	'country': 'United States',
-	'population': 115644,
-	'fact': 'largest city in New Hampshire'
-	},
-	'Concord': {
-	'country': 'United States',
-	'population': 43976,
-	'fact': 'capital of New Hampshire'
-	},
-	'Conway': {
-	'country': 'United States',
-	'population': 9822,
-	'fact': 'olympian Sean Doherty is from here'
-	}
-}
+def describe_city(city, country = 'Norway'):
+	print(f"{city.title()} is in {country.title()}.")
 
-for city, information in cities.items():
-	print(f"{city} is an interesting place, here is some information:")
+describe_city('Oslo')
 
-	for fact_title, fact in information.items():
-		print(f"{fact_title.title()} is {fact}")
+describe_city('Portland', 'Oregon')
+
+describe_city('Bergen')
