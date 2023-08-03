@@ -27,4 +27,5 @@ class Privileges:
 		self.privileges = ['can add a post', 'can delete post', 'can ban users']
 
 	def show_privileges(self):
-		print(f'The administrator {self.privileges[0]}, {self.privileges[1]}, and {self.privileges[2]}.')
+		actions = f'The administrator {self.privileges[0]}, {self.privileges[1]}, and {self.privileges[2]}.'
+		return actions
