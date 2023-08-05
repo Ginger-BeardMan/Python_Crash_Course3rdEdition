@@ -1,27 +1,32 @@
-from random import choices
+from random import choice
 
-#all paramiters have been defined:
+character_choices = [66, 93, 42, 5, 18, 99, 31, 2, 7, 26, 'A', 'G', 'S', 'K', 'Z']
 
-character_choices = [66]#, 93, 42, 5, 18, 99, 31, 2, 7, 26, 'A', 'G', 'S', 'K', 'Z']
-
-my_ticket = [66, 66, 66, 66]
+my_ticket = [66, 5, 42, 'K']
 
 count = 0
 
-winning_numbers = []
+while True:
 
-def get_ticket_num():
 	winning_numbers = []
+
+	count += 1
+	
 	while len(winning_numbers) < 4:
-		winning_numbers += (choices(character_choices))
-		print(winning_numbers)
+		
+		new_number = choice(character_choices)
 
-def check_winning_ticket():
+		if new_number not in winning_numbers:
+			winning_numbers.append(new_number)
+
+	print(winning_numbers)
+
 	if my_ticket == winning_numbers:
+			
 		print('Congratulations, you won one billion dollars!')
-		count+=1
-		print(count)
+			
+		print(f'It took {count} tries to get the winning number!')
 
-while winning_numbers != my_ticket:
-	get_ticket_num()
-	check_winning_ticket()
+		break
+	
+	print(count)
