@@ -1,15 +1,18 @@
-# Create a dictionary of people's favorite numbers
+from pathlib import Path
+import json
 
-favorite_numbers = {'Joe': 5, 'Mike': 25, 'Matt': 69, 'Liz': 7, 'Fen': 89}
 
-print(favorite_numbers)
+#prompt for user's favorite number
+favorite_number = input('What is your favorite number? ')
 
-print(f"Joe's favorite number is {favorite_numbers['Joe']}")
+#use json.dumps() to store this number in a file
 
-print(f"Mike's favorite number is {favorite_numbers['Mike']}")
+contents = json.dumps(favorite_number)
+path.write_text(contents)
 
-print(f"Matt's favorite number is {favorite_numbers['Matt']}")
 
-print(f"Liz's favorite number is {favorite_numbers['Liz']}")
+#write a seperate program that reads in this value and prints the message 'I know our favorite number! It's ____.'
 
-print(f"Fen's favorite number is {favorite_numbers['Fen']}")
+contents = path.read_text()
+favorite_number = json.loads(contents)
+print('I know your favorite number! It is {favorite_number}')
